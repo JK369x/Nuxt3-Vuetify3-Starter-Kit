@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" :theme="useCartStore().getTheme">
     <Header />
     <v-main>
       <v-container>
@@ -11,6 +11,7 @@
 
 <script setup>
 import { useTheme } from "vuetify";
+import { useCartStore } from "./stores/cart";
 
 const theme = useTheme();
 const drawer = ref(null);

@@ -51,7 +51,6 @@
                 <v-btn class="bg-primary" @click="cartStore.add(product.id)">
                   Add to Cart
                 </v-btn>
-                <!-- <v-btn class="bg-primary"> Add to Cart </v-btn> -->
               </v-card-actions>
             </v-card>
           </v-col>
@@ -92,7 +91,8 @@
 </template>
 <script setup>
 import data from "~~/data";
-
+import { useCartStore } from "../stores/cart.js";
+const cartStore = useCartStore();
 const products = ref(data);
 const grid = ref();
 </script>
